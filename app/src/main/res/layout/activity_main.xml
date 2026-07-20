@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F0F0F">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tap Guard"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/headerStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="● ACTIVE"
+                android:textColor="#FF6200"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnEnableKeyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable TapGuard Keyboard"
+            android:textAllCaps="false"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Main Toggle Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="18dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="সুরক্ষা চালু"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repeated tap ব্লক করা হচ্ছে"
+                        android:textColor="#888888"
+                        android:textSize="12sp"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/mainSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:thumbTint="#FF6200"
+                    android:trackTint="#552200"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Duration Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="18dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IGNORE DURATION"
+                android:textColor="#666666"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/durationValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.05"
+                    android:textColor="#FF6200"
+                    android:textSize="44sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="seconds"
+                        android:textColor="#888888"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/durationDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ব্যালেন্সড"
+                        android:textColor="#555555"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/durationSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="15"
+                android:min="1"
+                android:progress="5"
+                android:progressTint="#FF6200"
+                android:thumbTint="#FF6200"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="0.01s" android:textColor="#444444" android:textSize="10sp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="0.05s" android:textColor="#444444" android:textSize="10sp" android:gravity="center"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="0.10s" android:textColor="#444444" android:textSize="10sp" android:gravity="right"/>
+            </LinearLayout>
+
+            <!-- Preset Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="14dp"
+                android:weightSum="4">
+
+                <Button
+                    android:id="@+id/btnQuick"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Quick\n0.01s"
+                    android:textSize="11sp"
+                    android:textColor="#AAAAAA"
+                    android:background="@drawable/preset_btn_bg"
+                    android:layout_marginEnd="4dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/btnBalanced"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Balance\n0.05s"
+                    android:textSize="11sp"
+                    android:textColor="#FF6200"
+                    android:background="@drawable/preset_btn_active_bg"
+                    android:layout_marginEnd="4dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/btnCareful"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Careful\n0.08s"
+                    android:textSize="11sp"
+                    android:textColor="#AAAAAA"
+                    android:background="@drawable/preset_btn_bg"
+                    android:layout_marginEnd="4dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/btnMax"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Max\n0.10s"
+                    android:textSize="11sp"
+                    android:textColor="#AAAAAA"
+                    android:background="@drawable/preset_btn_bg"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Stats Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:padding="14dp"
+                android:layout_marginEnd="6dp">
+                <TextView
+                    android:id="@+id/blockedCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#FF6200"
+                    android:textSize="26sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blocked"
+                    android:textColor="#555555"
+                    android:textSize="11sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:padding="14dp"
+                android:layout_marginEnd="6dp">
+                <TextView
+                    android:id="@+id/allowedCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#4CAF50"
+                    android:textSize="26sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Allowed"
+                    android:textColor="#555555"
+                    android:textSize="11sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:padding="14dp">
+                <TextView
+                    android:id="@+id/sessionTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0s"
+                    android:textColor="#FFFFFF"
+                    android:textSize="26sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Session"
+                    android:textColor="#555555"
+                    android:textSize="11sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Log Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RECENT ACTIVITY"
+                android:textColor="#666666"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/logArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="কোনো activity নেই"
+                android:textColor="#888888"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:lineSpacingMultiplier="1.5"/>
+        </LinearLayout>
+
+        <!-- Test Button -->
+        <Button
+            android:id="@+id/testBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="এখানে ট্যাপ করে টেস্ট করুন"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:background="@drawable/orange_btn_bg"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Clear Stats Button -->
+        <Button
+            android:id="@+id/btnClearStats"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="Stats মুছুন"
+            android:textColor="#666666"
+            android:textSize="13sp"
+            android:background="@drawable/card_bg"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
